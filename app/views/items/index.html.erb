@@ -1,2 +1,9 @@
-<h1><%= @items.inspect %></h1>
+<% @items.each do |item| %>
+  <div>
+    <h1><%= item.summary %></h1><br />
+    <i><%= item.price %></i><br />
+  </div>
+
+  <hr />
+<% end %>
 
