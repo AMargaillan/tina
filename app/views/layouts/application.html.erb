@@ -9,6 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Lobster+Two:700|Niconne|Spirax&display=swap');
+      @import url('https://fonts.googleapis.com/css?family=Merienda&display=swap');
     </style>
   </head>
 
@@ -34,6 +35,13 @@
     </form>
   </div>
 </nav>
+
+<% if notice.present? %>
+  <p class="notice"><%= notice %></p>
+<% end %>
+<% if alert.present? %>
+  <p class="alert"><%= alert %></p>
+<% end %>
 
     <%= yield %>
   </body>
