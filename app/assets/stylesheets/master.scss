@@ -9,6 +9,10 @@ h1 {
   font-family: "Merienda", cursive;
 }
 
+h2 {
+  font-family: "Merienda", cursive;
+}
+
 i {
   font-family: "Merienda", cursive;
 
@@ -27,15 +31,33 @@ i {
   font-size: 45px;
 }
 
-.booyah-box {
+.card {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   box-shadow: 1px 1px 2px 0 #d0d0d0;
   background: #fff;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
-  margin-top: 20px;
+  margin-top: 120px;
+  margin-left: 130px;
   padding: 20px;
 }
 
+.card-img-top {
+  width: 100%;
+}
+
+.booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: image_url('green_dust_scratch.png');
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top: 120px;
+}
+
+.form-inputs {
+  font-family: "Merienda", cursive;
+}
 
