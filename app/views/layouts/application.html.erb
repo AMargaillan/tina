@@ -14,46 +14,55 @@
   </head>
 
   <body>
+    <div id="flex-content-container">
+      <nav class="navbar navbar-toggleable-md navbar-light bg-light">
+      <a class="navbar-brand" href="#">Colorful Creations</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <nav class="navbar navbar-toggleable-md navbar-light bg-light">
-  <a class="navbar-brand" href="#">Colorful Creations</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
+        </ul>
+        <ul class="navbar-nav">
+          
+        </ul>
 
-    </ul>
-    <ul class="navbar-nav">
-      <% if admin_signed_in? %>
-        <li class="nav-item">
-          <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: 'nav-link' %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to 'Admin Login', new_admin_session_path, class: 'nav-link' %>
-        </li>
-      <% end %>
-    </ul>
+        </form>
+      </div>
+    </nav>
 
-    </form>
-  </div>
-</nav>
+    <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
 
-<% if notice.present? %>
-  <p class="notice"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-  <p class="alert"><%= alert %></p>
-<% end %>
+        <%= yield %>
+    </div>
 
-    <%= yield %>
+    <div id="footer">
+      <div class="container">
+        <b>Footer Here</b>
+        <br />
+        <% if admin_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Admin Login', new_admin_session_path, class: 'nav-link' %>
+            </li>
+          <% end %>
+      </div>
+    </div>
   </body>
 </html>
