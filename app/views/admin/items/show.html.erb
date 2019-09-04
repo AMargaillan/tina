@@ -1,0 +1,13 @@
+<div class="row">
+  <% @items.each do |item| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <h5 class="card-title"><%= item.summary %></h5><br /><br />
+        <h6 class="card-subtitle mb-2 text-muted">&#36;<%= item.price %>0</h6><br />
+        <a href="#" class="card-link">Details</a>
+      </div>
+    </div>
+    <hr />
+  <% end %>
+</div>

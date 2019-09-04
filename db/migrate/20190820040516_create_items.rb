@@ -6,5 +6,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.decimal :price
       t.timestamps
     end
+
   end
 end
