@@ -2,16 +2,20 @@ class Admin::ItemsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
+
     @item = Item.all 
   end
 
   def new
+
     @item = Item.new
   end
 
   def create
-    @item = Item.create(item_params)
-      if @item.valid?
+    anotherHash = {:admin_id=> 1}
+    newDbEntry=anotherHash.merge(item_params)
+    @item = Item.new(newDbEntry)
+      if @item.save
         redirect_to root_path
       else
         render :new, status: :unprocessable_entity
@@ -19,12 +23,25 @@ class Admin::ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+
+    @items = Item.find(params[:id])
   end
 
   def edit
+
     @item = Item.find(params[:id])
-    @item.update_attributes(item_params)
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to root_path
+  end
+
+  def destroy
+
+    @item = Item.find(params[:id])
+    @item.destroy
     redirect_to root_path
   end
 

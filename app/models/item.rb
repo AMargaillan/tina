@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :admin
+  has_many :photos
 
   validates :summary, presence: true
   validates :description, presence: true
