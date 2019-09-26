@@ -1,0 +1,17 @@
+<div class="col-10 offset-3">
+  <%# @items.each do |item| %>
+    <div class="card" style="width: 40rem;">
+      <div class="card-body center">
+        <%= image_tag @item.photo.to_s, class: 'card-img-top center' %>
+        <h5 class="card-title"><%= @item.summary %></h5><br /><br />
+        <h5 class="card-subtitle"><%= @item.description %></h5><br /><br />
+        <h6 class="card-subtitle mb-2 text-muted">&#36;<%= @item.price %>0</h6><br />
+        <% if admin_signed_in? %>
+          <%= link_to 'Edit', edit_admin_item_path(item_url), class: 'card-link' %>
+          <%= link_to 'Delete', admin_item_path(@item.id), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'card-link' %>
+        <%# end %>
+      </div>
+    </div>
+    <hr />
+  <% end %>
+</div>

@@ -23,12 +23,12 @@ class Admin::ItemsController < ApplicationController
   end
 
   def show
-
     @items = Item.find(params[:id])
+    @photo = Photo.new 
+
   end
 
   def edit
-
     @item = Item.find(params[:id])
   end
 
@@ -39,7 +39,6 @@ class Admin::ItemsController < ApplicationController
   end
 
   def destroy
-
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
@@ -48,7 +47,7 @@ class Admin::ItemsController < ApplicationController
   private
 
    def item_params
-     params.require(:item).permit(:summary, :description, :price)
+     params.require(:item).permit(:summary, :description, :price, :photo)
    end
   
 end

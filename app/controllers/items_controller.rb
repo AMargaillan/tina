@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
 
   def index
-    @items = Item.all 
+    @items = Item.all
   end
 
   def new
@@ -18,10 +18,12 @@ class ItemsController < ApplicationController
       else
         render :new, status: :unprocessable_entity
     end
+    @photo = Photo.new
   end
 
   def show
-    @items = Item.find(params[:id])
+    @item = Item.find(params[:id])
+    #@photo = Photo.find(params[:id])
   end
 
   def edit
@@ -35,14 +37,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-
     @item = Item.find(params[:id])
   end
 
   private
 
    def item_params
-     params.require(:item).permit(:summary, :description, :price)
+     params.require(:item).permit(:summary, :description, :price, :photo)
    end
 
 end
