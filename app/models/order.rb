@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+ 
 
   validates :email_address, presence: true
   validates :name, presence: true

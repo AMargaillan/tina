@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order = Order.find(order_params[:id])
   end
 
   # GET /orders/new
@@ -28,9 +29,9 @@ class OrdersController < ApplicationController
     
     respond_to do |format|
       if @order.save
-        OrderMailer.order_placed.deliver
-        format.html { redirect_to root_path, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
+        OrderMailer.order_placed(@order).deliver
+        format.html { redirect_to root_path, notice: 'Order was successfully emailed.' }
+        format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -70,6 +71,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.fetch(:order).permit(:email_address, :phone_number, :name, :item_name)
+      params.require(:order).permit(:email_address, :phone_number, :name, :item_name)
     end
 end

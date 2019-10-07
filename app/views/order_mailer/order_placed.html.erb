@@ -1,8 +1,15 @@
-<p>Congrats!</p>
-
-<p>
-    An order has been placed! 
-
-    
-</p>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Congrats!</h1>
+    <p>
+      An order has been placed!
+    </p>
+    <p>
+      <b><%= @order.name %></b> has ordered "<b><%= @order.item_name %></b>".  <%= @order.name %> can be contacted at <b><%= @order.phone_number %></b> or by email: <b><%= @order.email_address %></b>.
+    </p>
+  </body>
+</html>
