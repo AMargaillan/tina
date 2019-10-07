@@ -1,3 +1,5 @@
+<h2 class="booyah-box col-10 offset-1">Welcome to Colorful Creations!  All items below are uniquely handpaited. If you see something you, like, please select 'Place Order' above to email me.</h2>
+
 <div class="row">
   <% @items.each do |item| %>
     <div class="card" style="width: 18rem;">
@@ -6,6 +8,8 @@
         <h5 class="card-title"><%= item.summary %></h5><br /><br />
         <h6 class="card-subtitle mb-2 text-muted">&#36;<%= item.price %>0</h6><br />
         <%= link_to 'Details', item_path(item.id), class: 'card-link' %>
+        <br />
+        <br />
         <% if admin_signed_in? %>
           <%= link_to 'Edit', edit_admin_item_path(item.id), class: 'card-link' %>
           <%= link_to 'Delete', admin_item_path(item.id), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'card-link' %>

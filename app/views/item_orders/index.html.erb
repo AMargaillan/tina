@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shopping Cart</h1>
+
+<%= puts "---------NOT IN THE TABLE-------" %>
+<%= puts @item %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Cart</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <%= puts @item %>
+
+  <tbody>
+    <%= puts "----------------IN THE TABLE----------------------------" %>
+    <%= puts @item %>
+    <% @item_orders.each do |item_order| %>
+      <tr>
+        <td><%= item_order.item %></td>
+        <td><%= item_order.cart %></td>
+        <td><%= link_to 'Show', item_order %></td>
+        <td><%= link_to 'Edit', edit_item_order_path(item_order) %></td>
+        <td><%= link_to 'Destroy', item_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item Order', new_item_order_path %>

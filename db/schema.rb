@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_214149) do
+ActiveRecord::Schema.define(version: 2019_10_07_000045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(version: 2019_09_21_214149) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "item_orders", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "cart_id"
+    t.integer "quantity", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_item_orders_on_cart_id"
+    t.index ["item_id"], name: "index_item_orders_on_item_id"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "summary"
     t.text "description"
@@ -40,6 +55,15 @@ ActiveRecord::Schema.define(version: 2019_09_21_214149) do
     t.index ["admin_id"], name: "index_items_on_admin_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "email_address"
+    t.string "name"
+    t.bigint "phone_number"
+    t.string "item_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "photos", force: :cascade do |t|
     t.integer "item_id"
     t.integer "admin_id"
@@ -49,10 +73,7 @@ ActiveRecord::Schema.define(version: 2019_09_21_214149) do
     t.index ["item_id"], name: "index_photos_on_item_id"
   end
 
-  create_table "shopping_carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "item_orders", "carts"
+  add_foreign_key "item_orders", "items"
   add_foreign_key "items", "admins"
 end

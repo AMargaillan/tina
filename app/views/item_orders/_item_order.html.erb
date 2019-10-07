@@ -1,0 +1,29 @@
+<div class="columns align-items-center">
+  <div class="column is-1">
+    <%= item_order.quantity %>
+  </div>
+
+  <div class="column is-2">
+    <figure class="is-128x128 image">
+      <%= image_tag item.photo.to_s %>
+    </figure>
+  </div>
+
+  <div class="column is-9">
+    <strong><%= item_order.item.summary %></strong>
+    <div class="columns align-items-center">
+      <div class="content column is-9">
+        <%= truncate(item_order.item.description, length: 140) %>
+      </div>
+      <div class="column is-3 has-text-right">
+        <strong class="f4"><%= number_to_currency(item_order.total_price) %></strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="has-text-right">
+  <%= link_to 'Remove Item', item_order, method: :delete, data: { confirm: "Are you sure?" }, class: 'card-link' %>
+</div>
+
+<br />
