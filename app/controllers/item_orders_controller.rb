@@ -1,5 +1,5 @@
 class ItemOrdersController < ApplicationController
-  include CurrentCart
+  #include CurrentCart
   #before_action :set_item_order, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create] 
 
