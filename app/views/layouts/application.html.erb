@@ -16,7 +16,7 @@
   <body>
     <div id="flex-content-container">
       <nav class="navbar navbar-toggleable-md navbar-light bg-light">
-      <a class="navbar-brand" href="#">Colorful Creations</a>
+      <a class="navbar-brand" href="#">Colorful Creations by Tinamarie</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -60,9 +60,9 @@
               <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: 'nav-link' %>
             </div>
           <% else %>
-            <li class="nav-item">
+            <div class="nav-item">
               <%= link_to 'Admin Login', new_admin_session_path, class: 'nav-link' %>
-            </li>
+            </div>
           <% end %>
       </div>
     </div>
