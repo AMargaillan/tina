@@ -1,7 +1,11 @@
 @import "bootstrap";
 
 body {
-  background: image_url('background.jpg');
+  background: image_url('lion.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 h1 {
@@ -35,7 +39,12 @@ a {
 
 .navbar-brand {
   font-family: "Spirax", cursive;
-  font-size: 45px;
+  font-size: 35px;
+  margin-right: 100px;
+}
+
+.nav-item {
+  margin-right: 75px;
 }
 
 .card {
@@ -87,5 +96,6 @@ a {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 
 
