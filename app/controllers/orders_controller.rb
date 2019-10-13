@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         OrderMailer.order_placed(@order).deliver
-        format.html { redirect_to root_path, notice: 'Order was successfully emailed.' }
+        format.html { redirect_to root_path, notice: 'Order was successfully emailed.'}
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render :new }
