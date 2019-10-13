@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tina</title>
+    <title>Colorful Creations</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicon.jpg' %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -26,13 +27,11 @@
           <li class="nav-item">
             <%= link_to 'Home', root_path, class: 'nav-link' %>
           </li>
-          <br />
-          <br />
+
           <li class="nav-item">
             <%= link_to 'About', about_path, class: 'nav-link' %>
           </li>
-          <br />
-          <br />
+
           <li class="nav-item">
             <%= link_to 'Place Order', new_order_path, class: 'nav-link' %>
           </li>
