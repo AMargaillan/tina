@@ -13,7 +13,6 @@ body {
 }
 
 #footer {
-  position: relative;
   width: 100%;
   min-height: 100px;
   background-color: rgba(36, 32, 33, 0.9);
@@ -21,10 +20,16 @@ body {
   font-family: "Merienda", cursive;
   padding: 10px 0px;
   margin-top: 30px;
+  text-align: right;
+  display: table-column;
 }
 
 #footer a {
   color: white;
   font-weight: 100;
+  text-align: right;
+  padding-left: 40px;
+  padding-right: 40px;
 }
+
 

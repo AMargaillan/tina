@@ -4,7 +4,11 @@
   <%= simple_form_for @order, url: orders_path do |f| %>
     <%= f.input :email_address %>
     <%= f.input :name %>
+    <%= f.label :phone_number %>
+    <br />
     <%= f.telephone_field :phone_number %>
+    <br />
+    <br />
     <%= f.input :item_name %>
     <br />
     <%= f.submit "Order", class: 'btn btn-primary' %>
