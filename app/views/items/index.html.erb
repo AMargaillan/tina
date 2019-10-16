@@ -12,7 +12,8 @@
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <%= image_tag item.photo.to_s, class: 'card-img-top' %>
-        <h5 class="card-title"><%= item.summary %></h5><br /><br />
+        <br /><br />
+        <h5 class="card-title"><%= item.summary %></h5><br />
         <h6 class="card-subtitle mb-2 text-muted">&#36;<%= item.price %>0</h6><br />
         <%= link_to 'Details', item_path(item.id), class: 'card-link' %>
         <br />
